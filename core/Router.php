@@ -28,15 +28,12 @@ class Router {
     }
 
     private function callAction($controllerName, $method) {
-        // Tentukan folder berdasarkan nama Controller (tanpa kata Controller dan huruf kecil)
         $folder = strtolower(str_replace('Controller', '', $controllerName));
         
-        // Path absolut ke file controller
         $path = dirname(__DIR__) . "/features/$folder/$controllerName.php";
 
         if (file_exists($path)) {
             require_once $path;
-            // Inisialisasi class
             if (class_exists($controllerName)) {
                 $controller = new $controllerName();
                 if (method_exists($controller, $method)) {

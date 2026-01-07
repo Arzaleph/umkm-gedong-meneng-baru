@@ -1,5 +1,4 @@
 <?php 
-// Jika URL mengandung kata 'admin', jangan tampilkan navbar publik
 if (strpos($_SERVER['REQUEST_URI'], '/admin') !== false && strpos($_SERVER['REQUEST_URI'], '/login') === false) {
     return; 
 }
@@ -39,11 +38,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const navLinks = document.querySelectorAll('.nav-link');
 
     function applyScrollEffect() {
-        // Cek apakah ini halaman beranda (path "/" atau kosong)
         const isHomePage = window.location.pathname === "<?= str_replace(parse_url(BASE_URL, PHP_URL_SCHEME) . '://' . parse_url(BASE_URL, PHP_URL_HOST), '', BASE_URL) ?>/" || 
                            window.location.pathname === "<?= str_replace(parse_url(BASE_URL, PHP_URL_SCHEME) . '://' . parse_url(BASE_URL, PHP_URL_HOST), '', BASE_URL) ?>";
         
-        // Kondisi: Jika di-scroll LEBIH dari 50 ATAU jika BUKAN halaman beranda
         if (window.scrollY > 50 || !isHomePage) {
             navbar.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-md', 'py-2');
             navbar.classList.remove('bg-transparent', 'py-4');
@@ -51,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
             logoSub.classList.replace('text-gray-300', 'text-gray-500');
             navLinks.forEach(link => link.classList.replace('text-white/90', 'text-gray-600'));
         } else {
-            // Kembali transparan hanya di beranda saat scroll di atas (scrollY < 50)
             navbar.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-md', 'py-2');
             navbar.classList.add('bg-transparent', 'py-4');
             logoText.classList.replace('text-npcDark', 'text-white');
@@ -61,6 +57,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     window.addEventListener('scroll', applyScrollEffect);
-    applyScrollEffect(); // Jalankan langsung saat halaman dimuat
+    applyScrollEffect();
 });
 </script>

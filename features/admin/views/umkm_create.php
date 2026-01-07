@@ -36,7 +36,7 @@
                 </div>
 
                 <div class="space-y-2">
-                    <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Kontak / No. WhatsApp</label>
+                    <label class="text-xs font-bold text-gray-400 uppercase tracking-wider ml-1">Kontak / No. WhatsApp +62..</label>
                     <input type="text" name="kontak" value="<?= $umkm['kontak'] ?? '' ?>" required
                         class="w-full px-5 py-4 bg-gray-50 border border-gray-100 rounded-2xl focus:bg-white focus:border-npcGreen transition outline-none font-medium"
                         placeholder="0812xxxx">

@@ -42,7 +42,7 @@
                     </div>
 
                     <div class="space-y-3">
-                        <label class="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] ml-2">No. WhatsApp Aktif</label>
+                        <label class="text-[10px] font-black text-gray-400 uppercase tracking-[0.2em] ml-2">No. WhatsApp Aktif +62..</label>
                         <div class="relative">
                             <i class="fa-brands fa-whatsapp absolute left-6 top-1/2 -translate-y-1/2 text-green-500 text-lg"></i>
                             <input type="text" name="kontak" value="<?= $umkm['kontak'] ?>" required

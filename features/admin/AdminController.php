@@ -22,11 +22,9 @@ class AdminController extends Controller {
     
         $fotoName = null;
         if (!empty($_FILES["foto"]["name"])) {
-            // Berikan nama unik agar tidak tertimpa
             $fotoName = time() . "_" . $_FILES["foto"]["name"];
             $target = "public/uploads/" . $fotoName;
             
-            // Pastikan folder public/uploads sudah dibuat
             if (!is_dir("public/uploads")) {
                 mkdir("public/uploads", 0777, true);
             }
@@ -50,15 +48,18 @@ class AdminController extends Controller {
     protected function view($path, $data = []) {
         extract($data);
     
+        $isAdminPage = true; 
+    
         require_once "shared/layouts/header.php";
         require_once "shared/components/navbar.php"; 
         
         require_once $path;
+    
+        echo "</body></html>";
     }
 
     public function login() {
         if (isAdmin()) redirect("/admin/dashboard");
-        // Gunakan require_once khusus login karena halamannya full screen tanpa navbar umum
         require_once "views/login.php";
     }
 

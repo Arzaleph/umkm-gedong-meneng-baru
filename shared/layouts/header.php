@@ -44,8 +44,6 @@
             border-bottom: 1px solid #f3f4f6;
             box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
         }
-
-        /* Memperbaiki tampilan scrollbar agar lebih modern di Dashboard */
         ::-webkit-scrollbar {
             width: 8px;
         }

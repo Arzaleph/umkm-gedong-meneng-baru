@@ -37,7 +37,6 @@
 </footer>
 
 <script>
-    // Navbar Scroll Effect
     window.addEventListener('scroll', function() {
         const navbar = document.getElementById('navbar');
         const logoText = document.getElementById('logo-text');
